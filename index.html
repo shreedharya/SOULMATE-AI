@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A gentle space to talk through what's on your mind."
+    />
+    <title>SOULMATE — a little space to talk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Conversation options">
+        <a class="brand" href="#" aria-label="SOULMATE home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M16 26s-10-5.7-10-13a5.5 5.5 0 0 1 10-3.1A5.5 5.5 0 0 1 26 13c0 7.3-10 13-10 13Z" />
+              <path d="M10.5 16h3l1.7-3.4 2.1 6.2 1.5-2.8h3.7" />
+            </svg>
+          </span>
+          <span class="brand-name">SOULMATE<span>.</span></span>
+        </a>
+
+        <button class="new-chat-button" id="new-chat" type="button">
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M10 4v12M4 10h12" />
+          </svg>
+          <span>New conversation</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+
+        <div class="sidebar-label">YOUR SPACE</div>
+        <div class="conversation-item" aria-current="page">
+          <span class="conversation-dot" aria-hidden="true"></span>
+          <span>Today's conversation</span>
+          <span class="conversation-now">NOW</span>
+        </div>
+
+        <div class="sidebar-bottom">
+          <div class="gentle-card">
+            <span class="gentle-icon" aria-hidden="true">✳</span>
+            <p class="gentle-title">A gentle reminder</p>
+            <p class="gentle-copy">
+              You don't have to figure everything out all at once.
+            </p>
+          </div>
+          <div class="privacy-note">
+            <svg viewBox="0 0 18 18" aria-hidden="true">
+              <rect x="3.5" y="7.5" width="11" height="8" rx="2" />
+              <path d="M6 7.5V5a3 3 0 0 1 6 0v2.5M9 10.5v2" />
+            </svg>
+            <span>Your conversation stays in this browser</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div class="mobile-brand">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <path d="M16 26s-10-5.7-10-13a5.5 5.5 0 0 1 10-3.1A5.5 5.5 0 0 1 26 13c0 7.3-10 13-10 13Z" />
+                <path d="M10.5 16h3l1.7-3.4 2.1 6.2 1.5-2.8h3.7" />
+              </svg>
+            </span>
+            <span class="brand-name">SOULMATE<span>.</span></span>
+          </div>
+          <div class="conversation-heading">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Here with you</span>
+            <span class="connection-mode" id="connection-mode">Checking connection</span>
+          </div>
+          <button class="icon-button" id="header-new-chat" type="button" aria-label="Start a new conversation" title="New conversation">
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 4v12M4 10h12" />
+            </svg>
+          </button>
+        </header>
+
+        <section class="chat-area" aria-label="Chat conversation">
+          <div class="chat-content">
+            <div class="date-divider"><span>TODAY</span></div>
+            <div class="messages" id="messages" aria-live="polite" aria-relevant="additions">
+              <div class="welcome-block" id="welcome-block">
+                <div class="welcome-orb" aria-hidden="true">
+                  <span class="orb-spark orb-spark-one">✳</span>
+                  <span class="orb-spark orb-spark-two">✦</span>
+                  <span class="orb-heart">♡</span>
+                </div>
+                <p class="eyebrow">A MOMENT FOR YOU</p>
+                <h1>It's okay to start<br />where you are.</h1>
+                <p class="welcome-copy">
+                  No pressure, no judgment. Just a little space to untangle
+                  what's on your mind.
+                </p>
+              </div>
+              <article class="message assistant-message">
+                <div class="avatar" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 19s-7-4-7-9a4 4 0 0 1 7-2.3A4 4 0 0 1 19 10c0 5-7 9-7 9Z" />
+                  </svg>
+                </div>
+                <div class="message-body">
+                  <div class="message-meta"><span>SOULMATE</span><time>just now</time></div>
+                  <div class="bubble assistant-bubble">
+                    Hi, I'm glad you're here. How are you feeling today?
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="quick-prompts" id="quick-prompts" aria-label="Suggested messages">
+              <span class="quick-label">NOT SURE WHERE TO START?</span>
+              <div class="prompt-list">
+                <button class="prompt-chip" type="button" data-message="I've had a lot on my mind lately">
+                  <span aria-hidden="true">☁</span> A lot on my mind
+                </button>
+                <button class="prompt-chip" type="button" data-message="I'm feeling a little anxious">
+                  <span aria-hidden="true">◌</span> Feeling anxious
+                </button>
+                <button class="prompt-chip" type="button" data-message="I have something good to share, I'm excited">
+                  <span aria-hidden="true">✦</span> Something good
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="composer-area">
+          <form class="composer" id="chat-form">
+            <label class="visually-hidden" for="message-input">Your message</label>
+            <textarea
+              id="message-input"
+              name="message"
+              rows="1"
+              maxlength="1000"
+              placeholder="Ask SOULMATE..."
+              autocomplete="off"
+              required
+            ></textarea>
+            <button class="send-button" id="send-button" type="submit" aria-label="Send message">
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M17 3 9 11M17 3l-5 14-3-6-6-3 14-5Z" />
+              </svg>
+            </button>
+          </form>
+          <p class="composer-caption">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 14s5-2.8 5-7a2.8 2.8 0 0 0-5-1.6A2.8 2.8 0 0 0 3 7c0 4.2 5 7 5 7Z" />
+            </svg>
+            Take your time. There's no wrong way to feel.
+          </p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
